@@ -2,6 +2,13 @@
  * @深合并
  */
 
+/** 判断是否是对象或者是数组 */
+function isObject(obj) {
+    if (typeof obj == 'object' && obj !== null) {
+        return true
+    }
+}
+
 (proto => {
     function deepAssign(val1, val2) {
         let val = deepClone(val1)
@@ -18,7 +25,7 @@
             /**
              * 如果子项仍旧是对象的话，继续进行深合并
              * */
-            if ((val[key] !== null && typeof val[key] === 'object') && (val2[key] !== null && typeof val2[key] === 'object')) {
+            if (isObject(val[key]) && isObject(val2[key])) {
                 val[key] = deepAssign(val[key], val2[key])
                 continue
             }

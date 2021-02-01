@@ -6,17 +6,17 @@
     function myCall(thisArgs, ...args) {
         thisArgs = thisArgs === undefined ? window : thisArgs
         const type = typeof thisArgs
-
         if (!/^(object|function)$/.test(type)) {
-            Object(thisArgs)
+            thisArgs = Object(thisArgs)
         }
+
         const key = Symbol('key')
         thisArgs[key] = this
-        let result = thisArgs[key](...args)
+        const result = thisArgs[key](...args)
         delete thisArgs[key]
         return result
-     }
-     proto.myCall = myCall
+    }
+    proto.myCall = myCall
 })(Function.prototype)
 
 function Product(name, price) {
@@ -31,3 +31,4 @@ function Food(name, price) {
 
 const food = new Food('cheese', 5)
 console.log(food.name, food.price);
+
