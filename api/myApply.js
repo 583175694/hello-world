@@ -26,7 +26,7 @@
         *  这里相当于执行了Product(name, price)
         *  参数是myCall传入的参数 args
         * */
-        const result = thisArg[key](args)
+        const result = thisArg[key](...args)
         /*
         *  删除Food里新增的key属性，返回result
         * */

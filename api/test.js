@@ -1,34 +1,40 @@
 /**
- * @仿写call
- */
+ * @深度比较
+ * */
 
-(proto => {
-    function myCall(thisArgs, ...args) {
-        thisArgs = thisArgs === undefined ? window : thisArgs
-        const type = typeof thisArgs
-        if (!/^(object|function)$/.test(type)) {
-            thisArgs = Object(thisArgs)
-        }
+function isEqual(val1, val2) {
+    if (!isObject(val1) || !isObject(val2)) return val1 === val2
 
-        const key = Symbol('key')
-        thisArgs[key] = this
-        const result = thisArgs[key](...args)
-        delete thisArgs[key]
-        return result
+    if (val1 === val2) return true
+
+    if (Object.keys(val1).length !== Object.keys(val2).length) return false
+
+    for (const key in val1) {
+        let result = isEqual(val1[key], val2[key])
+        if (!result) return false
     }
-    proto.myCall = myCall
-})(Function.prototype)
 
-function Product(name, price) {
-    this.name = name;
-    this.price = price;
+    return true
 }
 
-function Food(name, price) {
-    Product.myCall(this, name, price);
-    this.category = 'food';
+function isObject(obj) {
+    if (typeof obj == 'object' && obj !== null) {
+        return true
+    }
 }
 
-const food = new Food('cheese', 5)
-console.log(food.name, food.price);
-
+const obj1 = {
+    a: 100,
+    b: {
+        x: 100,
+        y: [1, 2, 3]
+    }
+}
+const obj2 = {
+    a: 100,
+    b: {
+        x: 100,
+        y: [1, 2, 4]
+    }
+}
+console.log(isEqual(obj1, obj2)) // true
