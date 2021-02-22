@@ -8,7 +8,6 @@
 function timer(args, wait = 2000) {
     return new Promise(((resolve, reject) => {
         setTimeout(() => {
-            console.log(args)
             resolve(args)
         }, wait)
     }))
