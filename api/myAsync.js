@@ -18,7 +18,6 @@ function timer(args, wait = 2000) {
  * */
 function async(func) {
     let gen = func() // func {<suspended>}
-    console.log(gen)
 
     function next(data) {
         let result = gen.next(data) // {value: xxx, done: false}

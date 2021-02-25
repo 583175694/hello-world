@@ -1,40 +1,36 @@
 /**
- * @深度比较
+ * @async
  * */
 
-function isEqual(val1, val2) {
-    if (!isObject(val1) || !isObject(val2)) return val1 === val2
-
-    if (val1 === val2) return true
-
-    if (Object.keys(val1).length !== Object.keys(val2).length) return false
-
-    for (const key in val1) {
-        let result = isEqual(val1[key], val2[key])
-        if (!result) return false
-    }
-
-    return true
+// 定时器
+function timer(args, wait = 2000) {
+    return new Promise(((resolve, reject) => {
+        setTimeout(() => {
+            console.log(args)
+            resolve(args)
+        }, wait)
+    }))
 }
 
-function isObject(obj) {
-    if (typeof obj == 'object' && obj !== null) {
-        return true
+// async，传入generator
+function async(func) {
+    let gen = func()
+
+    function next(data) {
+        const result = gen.next(data)
+        if (result.done) return result.value
+        result.value.then((res) => {
+            next(res)
+        })
     }
+
+    next()
 }
 
-const obj1 = {
-    a: 100,
-    b: {
-        x: 100,
-        y: [1, 2, 3]
-    }
+let func = function *() {
+    let f1 = yield timer('===>>> 1', 1000)
+    let f2 = yield timer('===>>> 2', 1000)
+    let f3 = yield timer('===>>> 3', 1000)
+    console.log(f1, f2, f3)
 }
-const obj2 = {
-    a: 100,
-    b: {
-        x: 100,
-        y: [1, 2, 4]
-    }
-}
-console.log(isEqual(obj1, obj2)) // true
+async(func)
