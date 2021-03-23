@@ -1,11 +1,10 @@
 /**
- * @param {number} n
- * @return {number}
+ * @整数拆分
  */
 var integerBreak = function(n) {
     let dp = []
     for (let i = 0; i <= n; i++) {
-      dp[i] = -1
+      dp[i] = 0
     }
     dp[1] = 1
     for (let i = 2; i <= n; i++) {
@@ -16,5 +15,3 @@ var integerBreak = function(n) {
 
     return dp
 }
-
-console.log(integerBreak(10))

@@ -1,6 +1,5 @@
 /**
- * @param {number[]} prices
- * @return {number}
+ * @买卖股票的最佳时机Ⅱ
  */
 var maxProfit = function (prices) {
   if (prices.length < 2) return 0

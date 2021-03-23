@@ -1,6 +1,5 @@
 /**
- * @param {number[][]} triangle
- * @return {number}
+ * @最小路径和
  */
 const triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
 var minimumTotal = function (triangle) {

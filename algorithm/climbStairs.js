@@ -1,7 +1,5 @@
 /**
  * @爬楼梯
- * @param {number} n
- * @return {number}
  */
 var climbStairs = function (n) {
   let arr = []
