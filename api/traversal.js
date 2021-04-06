@@ -7,8 +7,8 @@ function traversal(node) {
      * nodeType属性：1 => 元素，2 => 属性，3 =>文本，8 => 注释，9 => 文档
      * 如果是元素的话，直接输出标签名
      * */
-    if (node.nodeType === 1 && node.tagName === 'IMG') {
-        console.log(node.src)
+    if (node.nodeType === 1 && node.tagName === 'A') {
+        console.log(node)
     }
 
     /**
@@ -21,7 +21,3 @@ function traversal(node) {
         }
     }
 }
-
-traversal(dom)
-
-const dom = document.getElementsByTagName("body")[0]

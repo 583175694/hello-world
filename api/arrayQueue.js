@@ -38,11 +38,3 @@ class ArrayQueue {
 }
 
 const queue = new ArrayQueue(3)
-
-console.log(queue.enqueue(1), queue)  // true ArrayQueue {items: Array(1), n: 3, head: 0, tail: 1}
-console.log(queue.enqueue(2), queue)  // true ArrayQueue {items: Array(2), n: 3, head: 0, tail: 2}
-console.log(queue.enqueue(3), queue)  // true ArrayQueue {items: Array(3), n: 3, head: 0, tail: 3}
-console.log(queue.dequeue(), queue) // 1 ArrayQueue {items: Array(3), n: 3, head: 1, tail: 3}
-console.log(queue.enqueue(4), queue)  // true ArrayQueue {items: Array(3), n: 3, head: 0, tail: 3}
-console.log(queue.dequeue(), queue) // 2 ArrayQueue {items: Array(3), n: 3, head: 1, tail: 3}
-console.log(queue.enqueue(5), queue)  // true ArrayQueue {items: Array(3), n: 3, head: 0, tail: 3}
