@@ -1,17 +1,23 @@
 /**
- * @param {number} n
- * @return {number}
- */
-var fib = function (n) {
-  var dp = []
-  dp[0] = 0
-  dp[1] = 1
+ * @快速排序
+ * */
+const nums = [5, 1, 1, 2, 0, 0]
 
-  for (var i = 2; i <= n; i++) {
-    dp[i] = dp[i - 1] + dp[i - 2]
+function quickSort(nums) {
+  if (nums.length <= 1) return nums
+  let left = []
+  let right = []
+  let pivotIndex = Math.floor(nums.length / 2)
+  let pivot = nums.splice(pivotIndex, 1)[0]
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] < pivot) {
+      left.push(nums[i])
+    } else {
+      right.push(nums[i])
+    }
   }
-
-  return dp
+  return quickSort(left).concat([pivot], quickSort(right))
 }
 
-console.log(fib(2))
+console.log(quickSort(nums))

@@ -2,7 +2,7 @@
  * @插入排序
  * */
 
-function insertSort(n) {
+function insertionSort(n) {
   if (n <= 1) return n
 
   // 对每个元素进行比较
@@ -26,4 +26,4 @@ function insertSort(n) {
   return n
 }
 
-console.log(insertSort([4, 5, 6, 1, 3, 2]))
+console.log(insertionSort([4, 5, 6, 1, 3, 2]))
