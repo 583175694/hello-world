@@ -1,6 +1,5 @@
 /**
- * @param {ListNode} head
- * @return {ListNode}
+ * @反转链表
  */
 const head = array2list([1, 2, 3, 4, 5])
 

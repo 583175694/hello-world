@@ -1,3 +1,6 @@
+/**
+ * @栈
+*/
 class ArrayStack {
     constructor(n) {
         this.items = new Array()// 定义数组大小

@@ -1,7 +1,6 @@
 /**
  * @循环队列
  * */
-
 class CircularQueue {
   constructor(n) {
     this.items = new Array()
