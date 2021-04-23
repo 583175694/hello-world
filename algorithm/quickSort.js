@@ -21,6 +21,4 @@ function quickSort(arr) {
     return quickSort(left).concat([pivot], quickSort(right))
 }
 
-console.log(
-    quickSort([3, 1, 5, 7, 24, 7, 35, 753, 3])
-)
+console.log(quickSort([3, 1, 5, 7, 24, 7, 35, 753, 3]))

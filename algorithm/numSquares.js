@@ -1,7 +1,7 @@
 /**
  * @完全平方数
  */
-var numSquares = function(n) {
+var numSquares = function (n) {
     var dp = []
 
     for (let i = 0; i <= n; i++) {

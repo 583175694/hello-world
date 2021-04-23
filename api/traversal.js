@@ -7,8 +7,8 @@ function traversal(node) {
      * nodeType属性：1 => 元素，2 => 属性，3 =>文本，8 => 注释，9 => 文档
      * 如果是元素的话，直接输出标签名
      * */
-    if (node.nodeType === 1 && node.tagName === 'A') {
-        console.log(node)
+    if (node.nodeType === 1 && node.tagName === 'H3') {
+        console.log(node.innerHTML)
     }
 
     /**
@@ -21,3 +21,7 @@ function traversal(node) {
         }
     }
 }
+
+const node = document.getElementsByClassName('cards-wrap webkit-scrollbar')[1]
+
+traversal(node)

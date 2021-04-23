@@ -1,6 +1,6 @@
 /**
  * @插入1000div问题
-*/
+ */
 // 记录任务开始时间
 let now = Date.now()
 //需要插入的容器
@@ -36,7 +36,6 @@ function loop(curTotal, curIndex) {
 }
 
 loop(total, index)
-
 
 console.log('JS运行时间：', Date.now() - now)
 setTimeout(() => {
