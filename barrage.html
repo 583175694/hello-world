@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        width: 100%;
+    }
+
+    .cute-barrage {
+        width: 100%;
+        height: 20rem;
+        position: absolute;
+        top: 1.5rem;
+        /*确定弹幕高度*/
+        left: 0;
+        overflow-x: hidden;
+    }
+
+    /*横向超出部分隐藏*/
+    .barrage-div {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        padding: 20px;
+        background-color: rgba(236, 238, 113, 0.9);
+        border-radius: 2rem;
+        white-space: nowrap;
+    }
+
+    img {
+        width: 0.5rem;
+        height: 0.5rem;
+        vertical-align: middle;
+        padding-left: 0.05rem;
+        border-radius: 50%;
+    }
+
+    span {
+        font-size: 14px;
+        padding: 0 0.1rem;
+        line-height: 0.6rem;
+        height: 0.6rem;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    i {
+        color: #fe5453;
+        font-weight: 700;
+    }
+</style>
+
+<body>
+    <div class="cute-barrage">
+        <div class="barrage-div">
+            <img
+                src="http://kw1-1253445850.file.myqcloud.com/static/image/stimg_7656dc02eb1cd13adbacbdd2695dc3a8.jpg" />
+            <span>么么嗒今天提现<i>1Q币</i></span>
+        </div>
+        <div class="barrage-div">
+            <img
+                src="http://kw1-1253445850.file.myqcloud.com/static/image/stimg_632fecdcb52417cb8ab89fa283e07281.jpg" />
+            <span>橘色的大耳朵猫今天提现<i>5Q币</i></span>
+        </div>
+        <div class="barrage-div">
+            <img
+                src="http://kw1-1253445850.file.myqcloud.com/static/image/stimg_632fecdcb52417cb8ab89fa283e07281.jpg" />
+            <span>丶鹿锅里面装着吴奶包今天提现<i>3Q币</i></span>
+        </div>
+        <div class="barrage-div">
+            <img
+                src="http://kw1-1253445850.file.myqcloud.com/static/image/stimg_7656dc02eb1cd13adbacbdd2695dc3a8.jpg" />
+            <span>么么嗒今天提现<i>1Q币</i></span>
+        </div>
+        <div class="barrage-div">
+            <img
+                src="http://kw1-1253445850.file.myqcloud.com/static/image/stimg_632fecdcb52417cb8ab89fa283e07281.jpg" />
+            <span>橘色的大耳朵猫今天提现<i>5Q币</i></span>
+        </div>
+        <div class="barrage-div">
+            <img
+                src="http://kw1-1253445850.file.myqcloud.com/static/image/stimg_632fecdcb52417cb8ab89fa283e07281.jpg" />
+            <span>丶鹿锅里面装着吴奶包今天提现<i>3Q币</i></span>
+        </div>
+        <div class="barrage-div">
+            <img
+                src="http://kw1-1253445850.file.myqcloud.com/static/image/stimg_7656dc02eb1cd13adbacbdd2695dc3a8.jpg" />
+            <span>么么嗒今天提现<i>1Q币</i></span>
+        </div>
+        <div class="barrage-div">
+            <img
+                src="http://kw1-1253445850.file.myqcloud.com/static/image/stimg_632fecdcb52417cb8ab89fa283e07281.jpg" />
+            <span>橘色的大耳朵猫今天提现<i>5Q币</i></span>
+        </div>
+        <div class="barrage-div">
+            <img
+                src="http://kw1-1253445850.file.myqcloud.com/static/image/stimg_632fecdcb52417cb8ab89fa283e07281.jpg" />
+            <span>丶鹿锅里面装着吴奶包今天提现<i>3Q币</i></span>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        //弹幕
+        var winWidth = $(window).width(); //获取屏幕宽度
+        $(".barrage-div").each(function (index, value) { //遍历每条弹幕
+            console.log(index, value);
+            var width = $(value).width() + 40; //获取当前弹幕的宽度
+
+            var topList = [2, 6, 10, 14]
+            var topRandom = Math.floor(Math.random() * 10) + 'rem'; //获取0,1,2的随机数  可根据情况改变
+            $(value).css({
+                "right": -width,
+                "top": topList[Math.floor(Math.random() * 4)] + 'rem'
+            }); //将弹幕移动到屏幕外面，正好超出的位置
+            //拼写动画帧函数，记得每个ani要进行区分，宽度从自己的负宽度移动一整个屏幕的距离
+            var keyframes = `\
+        @keyframes ani${index}{
+            0, 75%{
+                right:${-width}px;
+            }
+            87.5%{
+                right:${-width}px;
+            }
+            to{
+                right:${winWidth}px;
+            }
+        }\
+        @-webkit-keyframes ani${index}{
+            0, 75%{
+                right:${-width}px;
+            }
+            87.5%{
+                right:${-width}px;
+            }
+            to{
+                right:${winWidth}px;
+            }
+        }`;
+            //添加到页面的head标签里面
+            $("<style>").attr("type", "text/css").html(keyframes).appendTo($("head"));
+            //定义动画速度列表
+            var aniList = [7, 9, 11];
+            //取数组的随机数，0,1,2,3,4
+            var aniTime = Math.floor(Math.random() * 3);
+            //给当全前弹幕添加animation的css
+            //延迟的时间用每个的*1.5倍，这个可变
+            $(value).css({
+                "animation": `ani${index} ${aniList[aniTime]}s linear ${index * 3}s infinite`,
+                "-webkit-animation": `ani${index} ${aniList[aniTime]}s linear ${index * 3}s infinite`
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -3,7 +3,7 @@
 */
 class ArrayStack {
     constructor(n) {
-        this.items = new Array()// 定义数组大小
+        this.items = new Array()  // 定义数组大小
         this.n = n
         this.counts = 0
     }
