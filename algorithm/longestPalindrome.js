@@ -1,31 +1,33 @@
 /**
- * @最长回文串
+ * @param {string} s
+ * @return {string}
  */
-var longestPalindrome = function (s) {
-    var len = s.length
-    var max = 0
-    var ans = ''
-    for (let i = 0; i < len; i++) {
-        for (let j = i + 1; j <= len; j++) {
-            var tmpStr = s.substring(i, j)
-            if (func(tmpStr) && tmpStr.length > max) {
-                max = tmpStr.length
-                ans = tmpStr
-            }
-        }
+
+var s = "babad"
+
+var longestPalindrome = function(s) {
+  var result = ''
+  for (let i = 0; i < s.length; i++) {
+    // 奇数的情况
+    helper(i, i)
+    // 偶数的情况
+    helper(i, i + 1)
+  }
+
+  function helper(l, r) {
+    // 判断在边界内是否回文
+    while (l >= 0 && r <= s.length && s[l] === s[r]) {
+      l--
+      r++
     }
-    return ans
+    // 此时的 l，r 是不满足情况的，所以距离是从 l + 1 到 r - 1，所以是 r - l - 1
+    if (r - l - 1 > result.length) {
+      result = s.slice(l + 1, r)
+    }
+  }
+
+  return result
 }
 
-var func = function (s) {
-    var len = s.length
-    var middle = parseInt(len / 2)
-    for (let i = 0; i < middle; i++) {
-        if (s[i] != s[len - i - 1]) {
-            return false
-        }
-    }
-    return true
-}
+console.log(longestPalindrome(s))
 
-console.log(longestPalindrome('babad'))

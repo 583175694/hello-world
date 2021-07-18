@@ -5,29 +5,6 @@
 const l1 = array2list([9, 9, 9, 9, 9, 9, 9])
 const l2 = array2list([9, 9, 9, 9])
 
-function array2list(ary) {
-    if (!ary.length) {
-        return null
-    }
-
-    var node
-    var head = { val: ary[0], next: null }
-    var pnode = head //pnode变量用来保存前一个节点
-
-    for (var i = 1; i < ary.length; i++) {
-        node = { val: ary[i], next: null }
-        pnode.next = node //将前一个节点的next指向当前节点
-        pnode = node //将node赋值给pnode
-    }
-
-    return head
-}
-
-function ListNode(val) {
-    this.val = val
-    this.next = null
-}
-
 var addTwoNumbers = function (l1, l2) {
     var pre = new ListNode(0)
     var cur = pre;
@@ -60,3 +37,27 @@ var addTwoNumbers = function (l1, l2) {
 }
 
 console.log(addTwoNumbers(l1, l2))
+
+
+function array2list(ary) {
+    if (!ary.length) {
+        return null
+    }
+
+    var node
+    var head = { val: ary[0], next: null }
+    var pnode = head //pnode变量用来保存前一个节点
+
+    for (var i = 1; i < ary.length; i++) {
+        node = { val: ary[i], next: null }
+        pnode.next = node //将前一个节点的next指向当前节点
+        pnode = node //将node赋值给pnode
+    }
+
+    return head
+}
+
+function ListNode(val) {
+    this.val = val
+    this.next = null
+}
