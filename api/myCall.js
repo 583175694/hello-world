@@ -44,10 +44,10 @@ function Product(name, price) {
 }
 
 function Food(name, price) {
-    Product.myCall(this, name, price);
-    this.category = 'food';
+    Product.myCall(this, name, price)
+    this.category = 'food'
 }
 
 const food = new Food('cheese', 5)
-console.log(food.name, food.price);
+console.log(food.name, food.price)
 

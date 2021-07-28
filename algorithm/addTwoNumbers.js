@@ -15,8 +15,6 @@ var addTwoNumbers = function (l1, l2) {
         var li2 = l2 === null ? 0 : l2.val
         var sum = li1 + li2 + carry
 
-        console.log(li2)
-
         carry = sum > 9 ? 1 : 0
         sum = sum % 10
         cur.next = new ListNode(sum)

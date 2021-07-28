@@ -7,8 +7,7 @@ var reverseWords = function(s) {
         s[i] = reverseString(s[i])
     }
     return s.join(' ')
-};
-
+}
 
 var reverseString = function (s) {
     s = s.split('')

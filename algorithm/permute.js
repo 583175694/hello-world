@@ -7,8 +7,7 @@ var permute = function (nums) {
 
   function perm(n, p, q) {
     if (p === q) {
-      const newArr = deepClone(n)
-      console.log(n)
+      const newArr = JSON.parse(JSON.stringify(n))
       res.push(newArr)
     }
     for (let i = p; i <= q; i++) {
@@ -26,20 +25,7 @@ var permute = function (nums) {
 
   perm(nums, 0, nums.length - 1)
 
-  console.log(res)
-
   return res
 }
 
-permute([1, 2, 3])
-
-function deepClone(val) {
-  if (typeof val !== 'object') return val
-  let newVal = val instanceof Array ? [] : {}
-  for (const key in val) {
-    if (val.hasOwnProperty(key)) {
-      newVal[key] = typeof val[key] === 'object' ? deepClone(val[key]) : val[key]
-    }
-  }
-  return newVal
-}
+console.log(permute([1, 2, 3]))

@@ -6,7 +6,7 @@ function deepClone(val) {
     // 如果不是对象，直接返回这个参数
     if (typeof val !== 'object') return val
 
-    // 声明一个新变量，判断这个参数是数字还是对象
+    // 声明一个新变量，判断这个参数是数组还是对象
     let newVal = val instanceof Array ? [] : {}
 
     // 遍历参数对象

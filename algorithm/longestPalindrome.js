@@ -1,6 +1,5 @@
 /**
- * @param {string} s
- * @return {string}
+ * @最长回文子串
  */
 
 var s = "babad"
