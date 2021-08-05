@@ -31,3 +31,7 @@ let a = {
 }
 
 let b = deepClone(a)
+b[3] = 'd'
+
+console.log(a)
+console.log(b)

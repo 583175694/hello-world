@@ -14,3 +14,4 @@ var findPeakElement = function(nums) {
 
     return max
 }
+

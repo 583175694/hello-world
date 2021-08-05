@@ -1,7 +1,5 @@
 /**
  * @二叉树的层序遍历
- * @param {TreeNode} root
- * @return {number[][]}
  */
 
 var data = require('./data')
