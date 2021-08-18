@@ -2,13 +2,14 @@
  * @遍历节点
  * */
 
-function traversal(node) {
+function traversal(node, arr) {
+    arr = arr || []
     /**
      * nodeType属性：1 => 元素，2 => 属性，3 =>文本，8 => 注释，9 => 文档
      * 如果是元素的话，直接输出标签名
      * */
-    if (node.nodeType === 1 && node.tagName === 'H3') {
-        console.log(node.innerHTML)
+    if (node.nodeType === 1) {
+        arr.push(node.tagName.toLowerCase)
     }
 
     /**
@@ -17,11 +18,14 @@ function traversal(node) {
     for (let i = 0; i < node.childNodes.length; i++) {
         let item = node.childNodes[i]
         if (item.nodeType === 1) {
-            traversal(item)
+            traversal(item, arr)
         }
     }
+
+    return arr
 }
 
-const node = document.getElementsByClassName('cards-wrap webkit-scrollbar')[1]
+var node = document.getElementsByTagName('html')[0]
 
 traversal(node)
+

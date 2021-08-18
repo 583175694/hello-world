@@ -8,7 +8,6 @@ var sortedSquares = function (nums) {
         return Math.pow(res, 2)
     })
 
-
     return nums.sort((a, b) => a - b)
 }
 

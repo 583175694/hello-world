@@ -2,50 +2,39 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
 
-  #box {
-    width: 200px;
-    height: 200px;
-    background-color: orangered;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
+<style>
+    .box {
+        box-sizing: border-box;
+        border: chocolate solid 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        background-color: chocolate;
+    }
 </style>
 
 <body>
-  <div>前端自测</div>
-  <div id="box"></div>
+    <div>前端自测</div>
+    <ul id="ul">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
 
-  <script>
-    const box = document.getElementById('box')
-    box.onmousedown = function(e) {
-      var offsetX = e.offsetX
-      var offsetY = e.offsetY
-
-      document.onmousemove = function(arg) {
-        arg = arg || window.event
-        var clientX = arg.clientX
-        var clientY = arg.clientY
-
-        box.style.transform = 'translate(' + (clientX - offsetX) + 'px, ' + (clientY - offsetY) + 'px)'
-      }
-    }
-
-    box.onmouseup = function() {
-      document.onmousemove = null
-    }
-  </script>
+    <script>
+        var ul = document.getElementById('ul')
+        ul.addEventListener('click', (e) => {
+            console.log(e.target)
+            console.log(e.currentTarget)
+        })
+    </script>
 </body>
 
 </html>
