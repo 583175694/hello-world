@@ -1,6 +1,6 @@
 /**
  * @函数柯里化
-*/
+ */
 
 function curry(fn, args) {
     // 获取函数 add 的形参个数
@@ -27,7 +27,19 @@ function fn(a, b, c) {
     return a + b + c
 }
 
-add(2,3,4)
+add(2, 3, 4)
 add(2)(3)(4)
-add(2,3)(4)
-add(2)(3,4)
+add(2, 3)(4)
+add(2)(3, 4)
+
+// 第二种实现方式
+function curry(fn) {
+    var length = fn.length
+    return function innerCurry(...args) {
+        if (args.length < length) {
+            return (...args2) => innerCurry(...args, ...args2)
+        } else {
+            return fn.apply(this, args)
+        }
+    }
+}

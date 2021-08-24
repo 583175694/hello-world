@@ -1,17 +1,20 @@
 /**
-* @节流
-* */
+ * @节流
+ * */
 
-function throttle(func, wait = 500) {
+function throttle(func, wait) {
     let canRun = true
-
-    return function (...args) {
-        if (!canRun) return
-
-        canRun = false
-        setTimeout(() => {
-            func.apply(this, args)
-            canRun = true
-        }, wait)
+    let lastArgs
+    return function (...arguments) {
+        if (!canRun) {
+            lastArgs = arguments
+        } else {
+            canRun = false
+            func.apply(this, arguments)
+            setTimeout(() => {
+                canRun = true
+                if (lastArgs) func.apply(this, lastArgs)
+            }, wait)
+        }
     }
 }
