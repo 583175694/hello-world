@@ -15,8 +15,6 @@
 
 [数组扁平化](https://github.com/583175694/hello-world/blob/master/api/flatten.js)
 
-[返回DOM tree包含的元素标签名](https://github.com/583175694/hello-world/blob/master/api/getTags.js)
-
 [重写apply](https://github.com/583175694/hello-world/blob/master/api/myApply.js)
 
 [重写async函数](https://github.com/583175694/hello-world/blob/master/api/myAsync.js)
@@ -46,6 +44,8 @@
 [数据类型检测](https://github.com/583175694/hello-world/blob/master/api/toType.js)
 
 [遍历节点](https://github.com/583175694/hello-world/blob/master/api/traversal.js)
+
+[返回DOM tree包含的元素标签名](https://github.com/583175694/hello-world/blob/master/api/getTags.js)
 
 [链表](https://github.com/583175694/hello-world/blob/master/api/linkList.js)
 
