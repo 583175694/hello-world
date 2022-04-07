@@ -17,7 +17,6 @@ var productExceptSelf = function (nums) {
             r[i] = nums[i + 1] * r[i + 1]
         }
     }
-    console.log(l, r)
     return nums.map((res, i) => {
         return l[i] * r[i]
     })

@@ -1,4 +1,5 @@
 /**
+<<<<<<< HEAD
  * Definition for singly-linked list.
  * function ListNode(val, next) {
  *     this.val = (val===undefined ? 0 : val)
@@ -6,6 +7,8 @@
  * }
  */
 /**
+=======
+>>>>>>> 11d725ed14a492986299a8d5801395818c0adbaf
  * @回文链表
  * @param {ListNode} head
  * @return {boolean}
@@ -13,6 +16,7 @@
 
 const head = array2list([1, 4, 4, 1])
 
+<<<<<<< HEAD
 function array2list(ary) {
     if (!ary.length) {
         return null
@@ -31,6 +35,8 @@ function array2list(ary) {
     return head
 }
 
+=======
+>>>>>>> 11d725ed14a492986299a8d5801395818c0adbaf
 var reverseList = function (head) {
     let prev = null
     let curr = head
@@ -72,4 +78,26 @@ var isPalindrome = function(head) {
   return true
 }
 
+<<<<<<< HEAD
 console.log(isPalindrome(head))
+=======
+function array2list(ary) {
+    if (!ary.length) {
+        return null
+    }
+
+    var node
+    var head = { val: ary[0], next: null }
+    var pnode = head //pnode变量用来保存前一个节点
+
+    for (var i = 1; i < ary.length; i++) {
+        node = { val: ary[i], next: null }
+        pnode.next = node //将前一个节点的next指向当前节点
+        pnode = node //将node赋值给pnode
+    }
+
+    return head
+}
+
+console.log(isPalindrome(head))
+>>>>>>> 11d725ed14a492986299a8d5801395818c0adbaf

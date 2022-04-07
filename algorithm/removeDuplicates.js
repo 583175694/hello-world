@@ -12,7 +12,7 @@ var removeDuplicates = function (nums) {
         }
     }
 
-    return len
+    return nums.slice(0, len)
 }
 
 console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))

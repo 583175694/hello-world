@@ -1,6 +1,5 @@
 /**
- * @param {number[]} nums
- * @return {number[][]}
+ * @子集
  */
 const nums = [1, 2, 3]
 var subsets = function (nums) {

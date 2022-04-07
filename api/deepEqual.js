@@ -19,7 +19,7 @@ function isObject(obj) {
         if (val1 === val2) return true
 
         /** 获取对象key的长度，如果key不相等，直接判定是不相同的 */
-        if ( Object.keys(val1).length !== Object.keys(val2).length) return false
+        if (Object.keys(val1).length !== Object.keys(val2).length) return false
 
         /** 遍历子项，如果子项是对象的话，递归 */
         for (const key in val1) {

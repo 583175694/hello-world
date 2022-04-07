@@ -1,7 +1,10 @@
 /**
  * @无重复字符的最长子串
+<<<<<<< HEAD
  * @param {string} s
  * @return {number}
+=======
+>>>>>>> 11d725ed14a492986299a8d5801395818c0adbaf
  */
 var lengthOfLongestSubstring = function(s) {
     var max = 0
@@ -18,4 +21,9 @@ var lengthOfLongestSubstring = function(s) {
     return max
 }
 
+<<<<<<< HEAD
 lengthOfLongestSubstring('abcabcbb')
+=======
+lengthOfLongestSubstring('abcabcbb')
+
+>>>>>>> 11d725ed14a492986299a8d5801395818c0adbaf

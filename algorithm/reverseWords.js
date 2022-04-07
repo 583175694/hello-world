@@ -1,23 +1,10 @@
 /**
- * @反转字符串中的单词III
+ * @翻转字符串里的单词
  */
+var s = "a good   example"
+
 var reverseWords = function(s) {
-    s = s.split(" ")
-    for(var i = 0; i < s.length; i++) {
-        s[i] = reverseString(s[i])
-    }
-    return s.join(' ')
-};
-
-
-var reverseString = function (s) {
-    s = s.split('')
-    for (let i = 0; i < s.length / 2; i++) {
-      var tmp = s[i]
-      s[i] = s[s.length - i - 1]
-      s[s.length - i - 1] = tmp
-    }
-    return s.join('')
+    return s.trim().split(" ").reverse().filter((res) => res).join(" ")
 }
 
-console.log(reverseWords("Let's take LeetCode contest"))
+console.log(reverseWords(s))
