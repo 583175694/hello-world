@@ -1,7 +1,6 @@
 function sum(...params) {
   function add(...args) {
     params = params.concat(args);
-    console.log(params);
     return add;
   }
   add.toString = function () {
@@ -31,3 +30,4 @@ const generateMethod = generatePage('buiness-weex');
 const getxxx = generateMethod('getxxx');
 
 console.log(getxxx);
+

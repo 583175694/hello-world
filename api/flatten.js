@@ -25,5 +25,11 @@ var flatten = function (arr, depth = 1) {
 //   return arr;
 // };
 
+// function flatten(arr) {
+//   return arr.reduce((pre, cur) => {
+//     return pre.concat(Array.isArray(cur) ? flatten(cur) : cur);
+//   }, [])
+// }
+
 console.log(flatten([1, 2, 3, [1, 2, 3, [1, 2], [1, 3, [2, 3]]], 3, [3, 4, 1]], 2));
 console.log(flatten([1, [2], [3, [4]]], Infinity));

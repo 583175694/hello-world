@@ -21,10 +21,7 @@ function array2list(ary) {
     return head
 }
 
-function ListNode(val) {
-    this.val = val
-    this.next = null
-}
+
 
 var sortList = function (head) {
     if (!head || !head.next) return head
@@ -58,6 +55,11 @@ var listLength = function (head) {
         n++
     }
     return n
+}
+
+function ListNode(val) {
+    this.val = val
+    this.next = null
 }
 
 console.log(sortList(head))
